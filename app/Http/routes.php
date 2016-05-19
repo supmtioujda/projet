@@ -12,5 +12,34 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('supmti/index');
 });
+
+Route::any('/addStudent',[
+    'as' => 'addSt',
+    'uses' => 'StudentController@addStudent'
+]);
+Route::any('/allStudents.json',[
+    'as' => 'allSt',
+    'uses' => 'StudentController@AllStudents'
+]);
+
+Route::any('/addTeacher',[
+    'as' => 'addPf',
+    'uses' => 'TeacherController@addTeacher'
+]);
+Route::any('/allTeachers.json',[
+    'as' => 'allPf',
+    'uses' => 'TeacherController@AllTeachers'
+]);
+
+
+Route::any('/addEtablissement',[
+    'as' => 'addEt',
+    'uses' => 'EtablissementController@addEtablissement'
+]);
+
+Route::any('/addFiliere',[
+    'as' => 'addFil',
+    'uses' => 'FiliereController@addFiliere'
+]);

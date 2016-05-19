@@ -1,0 +1,87 @@
+
+
+<div class="page-content-inner" name="myform" >
+        <div class="panel panel-default">
+            <div class="panel-heading">
+            <h6 class="panel-title">Ajouter Un Professeur</h6></div>
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Nom:</label>
+                            <input class="form-control" placeholder="Nom" type="text" ng-model="formModel.Nom"></div>
+
+                        <div class="col-md-6">
+                            <label>Prénom:</label>
+                            <input class="form-control" placeholder="Prénom" type="text" ng-model="formModel.Prenom"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Téléphone 1:</label>
+                            <input class="form-control" placeholder="06-99-99-99-99" mask='06-99-99-99-99' type="phone" ng-model="formModel.Tel1"></div>
+
+                        <div class="col-md-6">
+                            <label>Téléphone 2:</label>
+                            <input class="form-control" placeholder="06-99-99-99-99" mask='06-99-99-99-99' type="phone" ng-model="formModel.Tel2"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Email 1:</label>
+                            <input class="form-control" placeholder="ton@email.com" type="email" ng-model="formModel.Email1"></div>
+
+                        <div class="col-md-6">
+
+                            <label>Email 2:</label>
+                            <input class="form-control" placeholder="ton@email.com" type="email" ng-model="formModel.Email2" ></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6" >
+
+                            <label >Photo:</label>
+
+                            <div  class="uploader"  >
+
+                                <input class="filename" ngf-resize="{width: 100, height: 100}" ngf-select  ng-model="formModel.Photo" name="file"    
+                                accept="image/jpg,image/png,image/jpeg" ngf-max-size="2MB" class="styled" id="attach" type="file" />
+
+                                <span class="action"  ></span>
+                            </div>
+                            <img  ngf-thumbnail="formModel.Photo" class="thumb">
+                            <button class="btn btn-warning" ng-click="formModel.Photo = null" ng-show="formModel.Photo">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"> Supprimer</span>
+                            </button>
+                            <span class="help-block">Formats Acceptées: jpeg, png, jpg. Max taille 2Mb</span>
+                        </div>
+                        <div class="col-md-6">
+                            <label>CV:</label>
+                            <div id="uniform-cv" class="uploader">
+                                <input accept="application/pdf,,application/msword"  ngf-max-size="2MB" ngf-select ng-model="formModel.CV" id="filebutton" name="filebutton" class="input-file" type="file" >
+                                <span style="-moz-user-select: none;" class="action"></span>
+                            </div>
+                            <button class="btn btn-warning" ng-click="formModel.CV = null" ng-show="formModel.CV">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"> Supprimer</span>
+                            </button>
+                            <span class="help-block">Formats Acceptées : pdf , doc. Max taille 2Mb</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-actions text-left">
+                    <button type="button"  class="btn btn-primary"  ng-click="save(formModel)" style="font-size:14px;">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"> AJOUTER</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>

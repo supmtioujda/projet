@@ -1,0 +1,77 @@
+<style>
+	.left button {
+		margin: 10px 0px;
+		padding: 9px;
+	}
+</style>
+<div class="page-content">
+	<div class="left">
+		<form method="POST">
+			<label>Nom :</label><input ng-model="nom" type="text" class="form-control" name="nom" id="nom">
+			<label>Prénom :</label><input ng-model="prenom" type="text" class="form-control" name="prenom" id="prenom">
+			<label>Date Naissance :</label><input ng-model="dateN" type="text" class="form-control" name="dateN" id="datN">
+			<label>Lieu Naissance :</label><input ng-model="lieuN" type="text" class="form-control" name="lieuN" id="lieuN">
+			<label>Téléphone :</label><input ng-model="tel" type="text" class="form-control" name="tel" id="tel">
+			<label>Email :</label><input ng-model="email" type="email" class="form-control" name="tel" id="email">
+			<label>Situation Familiale :</label>
+			<label>
+				<input ng-model="situationFam" type="radio"  name="situation-fam" id="cel" value="Célébataire"> Célébataire
+			</label>
+			<label>
+				<input ng-model="situationFam" type="radio" name="situation-fam" id="mar" value="Marié"> Marié
+			</label>
+			<label>
+				<input ng-model="situationFam" type="radio" name="situation-fam" id="divo" value="Divorcé"> Divorcé
+			</label><br>
+			<label>Adresse :</label><textarea ng-model="adresse" rows="6" class="form-control" name="adresse" id="adresse"></textarea>
+			<label>Nom Tuteur :</label><input ng-model="nomT" type="text" class="form-control" name="nomT" id="nomT">
+			<label>Adresse Tuteur :</label><textarea ng-model="adresseT" rows="6" class="form-control" name="adresseT" id="adresseT"></textarea>
+			<label>Téléphone Fixe :</label><input ng-model="teleF" type="text" class="form-control" name="teleF" id="teleF">
+			<label>Profession Pére :</label><input ng-model="profPere" type="text" class="form-control" name="profPere" id="profPere">
+			<label>Profession Mére :</label><input ng-model="profMere" type="text" class="form-control" name="profMere" id="profMere">
+			<label> Photo : </label> <input type="file" ng-model="photo" id="photo" name="photo">
+			<button class="btn-primary" id="btn-send" ng-click="save()">Envoyer</button>
+		</form>
+		<div class="alert alert-success">{{msg}}</div>
+	</div>
+	<div class="right">
+		<table class="table table-hover table-striped">
+			<tr>
+				<th>NOM</th>
+				<th>Prénom</th>
+				<th>Date Naissance</th>
+				<th>Lieu Naissance</th>
+				<th>Téléphone</th>
+				<th>Email</th>
+				<th>Situation Familiale</th>
+				<th>Adresse</th>
+				<th>Nom Tuteur</th>
+				<th>Adresse Tuteur</th>
+				<th>Téléphone Fixe</th>
+				<th>Profession Pére</th>
+				<th>Profession Mére</th>
+				<th>Photo</th>
+			</tr>
+			<tbody ng-repeat="student in data">
+			<tr>
+				<td>{{student.nom}}</td>
+				<td>{{student.prenom}}</td>
+				<td>{{student.dateN}}</td>
+				<td>{{student.lieuN}}</td>
+				<td>{{student.tel}}</td>
+				<td>{{student.email}}</td>
+				<td>{{student.situationFam}}</td>
+				<td>{{student.adresse}}</td>
+				<td>{{student.nomT}}</td>
+				<td>{{student.adresseT}}</td>
+				<td>{{student.teleF}}</td>
+				<td>{{student.profPere}}</td>
+				<td>{{student.profMere}}</td>
+				<td>{{student.photo}}</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>
+<!--END CONTENT-->
