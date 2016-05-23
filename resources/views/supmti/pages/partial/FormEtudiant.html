@@ -1,0 +1,186 @@
+<div class="container" ng-controller="Controller">
+    <fieldset><legend>Ajouter Etudiant :</legend>
+<form ng-submit="save()" >
+              
+<fieldset>
+<legend>Information Etudiant:</legend>
+
+<div class="row">
+<div class="col-md-offset-1 col-md-4">
+<div class="form-group">
+<label for="nom">Nom :</label>
+<input type="text" class="form-control" id="nom" placeholder="Nom" ng-model="formModel.nom">
+</div>
+</div>
+<div class="col-md-offset-1 col-md-4">
+<div class="form-group">
+<label for="prenom">Prenom :</label>
+<input type="text" class="form-control" id="prenom" placeholder="Prenom" ng-model="formModel.prenom">
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-offset-1 col-md-4">
+<div class="form-group">
+<label for="dateNaiss">Date de Naissance:</label>
+<input type="date" class="form-control" id="dateNaiss" placeholder="Date Naissance" ng-model="formModel.dateNaiss">
+</div>
+</div>
+<div class="col-md-offset-1 col-md-4">
+<div class="form-group">
+<label for="lieuNaiss">Lieu Naissance :</label>
+<input type="text" class="form-control" id="lieuNaiss" placeholder="Lieu Naissance" ng-model="formModel.lieuNaiss">
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-offset-1 col-md-4">
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-globe"></span>
+<input type="email" class="form-control" placeholder="Adresse Electronique" aria-describedby="basic-addon1" id="email" ng-model="formModel.email">
+</div>
+</div>
+<div class="col-md-offset-1 col-md-4">
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-earphone"></span>
+<input type='phone' ng-model='formModel.telephone'  mask='06-00-00-00-00'  mask-restrict='accept' mask-clean='true' mask-validate='false' mask-limit='true' class="form-control"  placeholder="Telephone" aria-describedby="basic-addon1" id="telephone" />
+
+
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-offset-1 col-md-4">
+<div class="form-group">
+<label for="adresse">Adresse Personelle :</label>
+<input type="text" class="form-control" id="adresse" placeholder="Adresse Personelle" ng-model="formModel.adresse">
+</div>
+</div>
+<div class="col-md-offset-1 col-md-4">
+<div class="form-group">
+<label for="situation"  >Situation :</label>
+<select name="situation" ng-model="formModel.situation" class="form-control" >
+<option value="">-- Choose situation --</option>
+      <option value="celibataire">Celibataire</option>
+      <option value="marier">Marie</option>
+    </select>
+
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-offset-1 col-md-4">
+<div class="form-group">
+<label for="photo" >Photo:</label>
+   <input type="file" name="photo" ngf-select 
+            class="form-control" ng-model="formModel.photo" />
+        
+
+
+</div>
+</div>
+</div>
+</fieldset>
+
+
+<fieldset>
+<legend>Information Tuteur d'etudiant:</legend>
+
+<div class="row">
+<div class="col-md-offset-1 col-md-4">
+<div class="form-group">
+<label for="nomTuteur">Nom Tuteur :</label>
+<input type="text" class="form-control" id="nomTuteur" placeholder="Nom Tuteur" ng-model="formModel.nomTuteur">
+</div>
+</div>
+<div class="col-md-offset-1 col-md-4">
+<div class="form-group">
+<label for="adresseTuteur">Adresse Tuteur :</label>
+<input type="text" class="form-control" id="adresseTuteur" placeholder="Adresse Tuteur" ng-model="formModel.adresseTuteur">
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-offset-1 col-md-4">
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-earphone"></span>
+<input type="Number" class="form-control" placeholder="Telephone Tuteur" aria-describedby="basic-addon1" id="telephoneTuteur" ng-model="formModel.telephoneTuteur">
+</div>
+</div>
+<div class="col-md-offset-1 col-md-4">
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-earphone"></span>
+<input type="Number" class="form-control" placeholder="Telephone Fixe" aria-describedby="basic-addon1" id="telephoneFixe" ng-model="formModel.telephoneFixe">
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-offset-1 col-md-4">
+<div class="form-group">
+<label for="professionPere">Profession Pere :</label>
+<input type="text" class="form-control" id="professionPere" placeholder="Profession Pere" ng-model="formModel.professionPere">
+</div>
+</div>
+<div class="col-md-offset-1 col-md-4">
+<div class="form-group">
+<label for="professionMere">Profession Mere :</label>
+<input type="text" class="form-control" id="professionMere" placeholder="Profession Mere" ng-model="formModel.professionMere">
+</div>
+</div>
+</div>
+
+</fieldset>
+<fieldset>
+
+<div class="row">
+<div class="col-md-offset-1 col-md-4">
+<div class="btn btn-info"  ng-click="inscrire()">Preinscription</div>
+<br><br>
+<div ng-show="myForm">
+<div class="row">
+      <label for="date" class="col-sm-2 control-label">Date Inscription:</label>
+      <div class="col-sm-7">             
+        <input type="date" ng-model="formModel.dateinscription" />
+      </div>
+</div><br>
+<div class="row">
+      <label for="filier" class="col-sm-2 control-label">Filier</label>
+      <div class="col-sm-7">             
+        <select class="form-control" ng-model="formModel.filier" ng-options="filier.description for filier in filiers" >
+          <option value="">-- Filier --</option>
+        </select>      
+      </div>
+</div>
+<br>
+<div class="row">
+      <label for="section" class="col-sm-2 control-label">Section</label>
+      <div class="col-sm-7">       
+        <select class="form-control" ng-model="formModel.filier.section" ng-options="section.name  for  section in formModel.filier.sections">
+          <option value="">-- Section --</option>
+        </select>      
+      </div>
+
+</div>
+<div class="row">
+      <label for="groupe" class="col-sm-2 control-label">Groupe</label>
+      <div class="col-sm-7">       
+        <select class="form-control" ng-model="formModel.filier.section.groupe" ng-options="groupe for groupe in formModel.filier.section.groupes">
+          <option value="">-- Groupe --</option>
+        </select>      
+      </div>
+</div>
+</div>
+</fieldset>
+<div class="row">
+<div class="col-md-offset-9 col-md-4">
+<button   class="btn btn-info">valider</button>
+</div>
+</div> 
+</form>
+
+</fieldset>
+</div>

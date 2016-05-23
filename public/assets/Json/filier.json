@@ -1,0 +1,25 @@
+{"filiers":[
+          {"description": "ISI",
+          "sections":[
+          {
+            "name":"SOIR","groupes":["ISI1", "ISI2", "ISI3", "ISI4", "ISI5"]
+          },
+          {
+            "name":"JOUR","groupes":["ISI1", "ISI2", "ISI3", "ISI4", "ISI5"]
+          }
+          ]
+
+          },
+
+        {
+            "description": "MGE",
+            "sections":[
+          {
+            "name":"SOIR","groupes":["MGE1", "MGE2", "MGE3", "MGE4", "MGE5"]
+          },
+          {
+            "name":"JOUR","groupes":["MGE1", "MGE2", "MGE3", "MGE4", "MGE5"]
+          }
+          ]
+        }
+        ]}

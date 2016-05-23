@@ -1,0 +1,115 @@
+
+    <h1>Listes des étudiants</h1>
+   
+    
+ 
+	<div role="main" class="container theme-showcase">
+      <div class="" style="margin-top:40px;">
+        <div class="col-lg-8">
+			<div class="page-header">
+				<h2 id="tables">Liste des étudiants</h2>
+			</div>
+			<div  ng-controller="ControllerListe">
+				
+				<form class="form-inline">
+					<div class="form-group">
+						<label >Rechercher</label>
+						<input type="text" ng-model="search" class="form-control" placeholder="rechercher">
+					</div>
+				</form>
+				<div >
+				<table class="table table-striped ">
+					<thead>
+						<tr>
+							<th class="col-xs-1 " ></th>
+							<th "col-xs-2 a" ng-click="sort('nom')">Nom
+								<span class="glyphicon sort-icon" ng-show="sortKey=='nom'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}" ></span>
+							</th>
+							<th "col-xs-2 a" ng-click="sort('prenom')">Prenom
+								<span class="glyphicon sort-icon" ng-show="sortKey=='prenom'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+							
+							
+							
+							
+							<th "col-xs-2 a" ng-click="sort('email')">EMAIL
+								<span class="glyphicon sort-icon" ng-show="sortKey=='email'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+							
+							<th class="col-xs-1">
+							</th>
+							<th class="col-xs-1"></th>
+							<th class="col-xs-1"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr dir-paginate-start="etudiant in etudiants |orderBy:'id':true|orderBy:sortKey:reverse|filter:search|itemsPerPage:1 "  >
+							
+							<td class="col-xs-1"><img ng-src="img/{{etudiant.photo}}.jpg" class=" img-responsive img-circle img-size"/></td>
+							<td class="col-xs-2 cap">{{etudiant.nom}}</td>
+							<td class="col-xs-2 cap">{{etudiant.prenom}}</td>
+							
+							<td class="col-xs-2 strong">{{etudiant.email}}</td>
+										
+            			<td class="col-xs-1">
+				<button type="button" ng-click="remove(etudiant)" class="btn btn-sm btn-danger">
+					<i class="glyphicon glyphicon-trash">
+					</i>
+				</button>
+				</td>
+
+				<td> <a href="#/EditEtudiant/{{etudiant.id}}" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a></td>
+				
+			
+				
+			<td>
+              <button ng-if="etudiant.expanded" ng-click="etudiant.expanded = false" class="btn btn-success"><i class="glyphicon glyphicon-eye-close"></i>details</button>
+              <button ng-if="!etudiant.expanded" ng-click="etudiant.expanded = true" class="btn btn-success btn-large"><i class="glyphicon glyphicon-eye-open"></i>  details</button>
+            </td>
+							</tr >
+                           <tr ng-if="etudiant.expanded"  dir-paginate-end="" >
+                          
+                           
+                           	<td colspan="9">
+        					 <div class="row">
+
+
+            
+
+
+
+            <div class="col-md-3 col-xs-6 ">
+              <label>Date Naissance:</label> {{etudiant.dateNaiss}}<br>
+              <label>Lieu Naissance:</label> {{etudiant.lieuNaiss}}<br>
+              <label>Situation:</label> {{etudiant.situation}}<br>
+          
+            </div>
+            
+            <div class="col-md-3 col-xs-6 ">
+              
+              <label>TEL:</label> {{etudiant.telephone}}<br>
+              <label>Adresse:</label> {{etudiant.adresse}}<br>
+            </div>
+            <div class="col-md-2 col-xs-6 text-center">
+             <img title="{{etudiant.nom}}" ng-src="img/{{etudiant.photo}}.jpg"class="img-thumbnail img-responsive img-circle ">
+            </div>
+            </div>
+          
+                          
+						</tr>
+					</tbody>
+				</table> 
+				</div>
+				<dir-pagination-controls
+					
+					direction-links="true"
+					boundary-links="true" >
+				</dir-pagination-controls>
+			</div>
+		</div>
+		
+      </div>
+    </div>
+		
+  </body>
+</html>

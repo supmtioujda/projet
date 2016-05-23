@@ -972,6 +972,36 @@ footer{
 	margin-right:15px;
 	color : #333;
 }
+/*
+Student (ouiam)
+*/
+
+.sort-icon {
+    font-size: 9px;
+    margin-left: 5px;
+}
+
+th {
+	cursor:pointer;
+}
+.col-md-3{width: 30%;
+text-align: left;
+padding-top: 15px;
+position: relative;
+right;}
+
+
+.img-size{
+	line-height: 1.42857143;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	max-width: 60px;
+	min-width: 55px;
+	max-height: 60px;
+	min-height: 55px;
+	transition: all .2s ease-in-out;
+}
+
 
 
 

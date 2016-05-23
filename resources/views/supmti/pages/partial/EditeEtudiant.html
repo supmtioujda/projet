@@ -1,0 +1,28 @@
+<div ng-controller="EditController">
+<form name="form">
+
+<label for="">nom</label>
+<input type="text" class="form-control" ng-model="etudiant.nom">
+
+<label for="">prenom</label>
+<input type="text" class="form-control" ng-model="etudiant.prenom">
+<label for="">Date Naissance</label>
+<input type="date" class="form-control" ng-model="etudiant.dateNaiss">
+<label for="">Lieu Naissance</label>
+<input type="text" class="form-control" ng-model="etudiant.lieuNaiss">
+<label for="">Adresse </label>
+<input type="text" class="form-control" ng-model="etudiant.adresse">
+
+<label for="">Tel</label>
+<input type="text" class="form-control" ng-model="etudiant.telephone">
+<label for="">Email</label>
+<input type="text" class="form-control" ng-model="etudiant.email">
+<label for="">Situation</label>
+<input type="text" class="form-control" ng-model="etudiant.situation">
+<label for="">image</label>
+<input type="text" class="form-control" ng-model="etudiant.photo">
+
+<button class="btn btn-primary" ng-click="save()">Save</button>
+<a href="#/" class="btn btn-danger">Cancel</a>
+</form>
+</div>

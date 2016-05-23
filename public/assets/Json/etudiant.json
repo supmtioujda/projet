@@ -1,0 +1,38 @@
+[
+	{ 	"id":1,
+		"nom":"berrached",
+		"prenom":"ouiame",
+		"dateNaiss":"1/01/1991",
+		"lieuNaiss":"oujda",
+		"email":"berrachedouiame@gmail.com",
+		"telephone":"06-35-65-13-86",
+		"adresse":"dhar lamhalla lot saada rue E12 Nr 32 oujda",
+		"situation":"célibataire",
+		"photo":"img3",
+		"nomTuteur":"mimoun",
+		"adresseTuteur":"dhar lamhalla oujda",
+		"telephoneTuteur":"0635652233",
+		"telephoneFixe":"05366512365",
+		"professionPere":"administrateur Principal",
+		"professionMere":"architectrice"
+	},
+	{ 	"id":2,
+		"nom":"berrached",
+		"prenom":"abdelatif",
+		"dateNaiss":"1/01/1996",
+		"lieuNaiss":"oujda",
+		"email":"berrachedouiame@gmail.com",
+		"telephone":"06-35-65-13-86",
+		"adresse":"dhar lamhalla lot saada rue E12 Nr 32 oujda",
+		"situation":"célibataire",
+		"photo":"img3",
+		"nomTuteur":"mimoun",
+		"adresseTuteur":"dhar lamhalla oujda",
+		"telephoneTuteur":"0635652233",
+		"telephoneFixe":"05366512365",
+		"professionPere":"administrateur Principal",
+		"professionMere":"architectrice"
+	}
+
+
+]

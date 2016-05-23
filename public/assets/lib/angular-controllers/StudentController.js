@@ -1,41 +1,69 @@
 
-sampleApp.controller('StudentController', ['$scope', '$http',
-    function ($scope, $http) {
+sampleApp.controller('StudentController', ['$scope', 'Upload','$http',
+   $http.get('Json/filier.json')
+.success(function(response){
+	$scope.filiers=response.filiers;
 
-        var resget = $http.get('http://localhost/supmti-Gabsence/public/allStudents.json');
-        resget.success(function(data, status, headers, config) {
-            $scope.data = data;
-        });
-        resget.error(function(data, status, headers, config) {
-            alert( "erreur message: " + JSON.stringify({data: data}));
-        });
+});
 
-        $scope.save = function () {
-            var student = {
-                "nom" : $scope.nom,
-                "prenom" : $scope.prenom,
-                "dateN" : $scope.dateN,
-                "lieuN" : $scope.lieuN,
-                "tel" : $scope.tel,
-                "email" : $scope.email,
-                "situationFam" : $scope.situationFam,
-                "nomT" : $scope.nomT,
-                "adresseT" : $scope.adresseT,
-                "teleF" : $scope.teleF,
-                "profPere" : $scope.profPere,
-                "profMere" : $scope.profMere,
-                "photo" : $scope.photo,
-                "adresse" : $scope.adresse
-            };
-            var res = $http.post('http://localhost/supmti-Gabsence/public/addStudent', student);
-            res.success(function(data, status, headers, config) {
-                $scope.msg = data;
-                $scope.data.push(student);
-            });
-            res.error(function(data, status, headers, config) {
-                alert( "failure message: " + JSON.stringify({data: data}));
-            });
-        };
-    }
+
+$scope.formModel={};
+
+
+$scope.save = function () {
+        console.log("Enregistrer");
+
+
+   Upload.upload({
+      url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
+      data: $scope.formModel
+   
+
+
+   });
+  save();
+  $scope.formModel="";
+
+   };
+$scope.myForm = false; 
+$scope.inscrire = function() {
+   $scope.myForm = !$scope.myForm;
+ 
+};  
 ]);
+sampleApp.controller('ControllerListe',function($scope, $http){
+	$scope.etudiants = []; //declare an empty array
+	$http.get('Json/etudiant.json').success(function(response){ 
+		$scope.etudiants = response;  //ajax request to fetch data into $scope.data
+	});
+
+
+		$scope.remove=function(etudiant){
+var index=$scope.etudiants.indexOf(etudiant);
+alert ("Bien Supprimer, l'Etudiant du ligne :" +index);
+$scope.etudiants.splice(index,1);
+	};
+
+
+			
+	
+	$scope.sort = function(keyname){
+		$scope.sortKey = keyname;   //set the sortKey to the param passed
+		$scope.reverse = !$scope.reverse; //if true make it false and vice versa
+	}
+});
+sampleApp.controller ('EditController',function($scope,$routeParams,$location){
+	
+	$scope.etudiants = {};
+	
+	var id=$routeParams.id;
+	
+	$scope.etudiant=$scope.etudiants[id];
+	
+	$scope.save=function(){
+		//save to db
+		//after saving success promise 
+		// redirect 
+		$location.path('/'); //main page
+	};
 

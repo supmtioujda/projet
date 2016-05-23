@@ -1,5 +1,5 @@
 
-var sampleApp = angular.module('sampleApp', ['ngFileUpload','ngMask','ngRoute']);
+var sampleApp = angular.module('sampleApp', ['ngFileUpload','ngMask','ngRoute','ngFileUpload','ngMask']);
 sampleApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -23,15 +23,18 @@ sampleApp.config(['$routeProvider',
         templateUrl: '/resources/views/supmti/pages/salarier.html',
         controller: 'salarierController'
       }).
-	      when('/addpanels', {
-        templateUrl: '/resources/views/supmti/pages/panels.html',
-        controller: 'panelsController'
-      }).
-	    when('/addicons', {
-        templateUrl: '/resources/views/supmti/pages/icons.html',
-        controller: 'iconsController'
-      }).
-	  
+		when('/listeetudiant',{
+		templateUrl:'/resources/views/supmti/pages/partial/ListeEtudiant.html',
+		controller:'ControllerListe'
+	}).when('/EditEtudiant/:id',{
+		templateUrl:'/resources/views/supmti/pages/partial/EditeEtudiant.html',
+		controller:'EditController'
+	}).otherwise({
+        redirectTo: '/'
+      }).when('/formetudiant',{
+		templateUrl:'/resources/views/supmti/pages/partial/FormEtudiant.html',
+		controller:'Controller'
+			}).
       otherwise({
         redirectTo: '/'
       });
